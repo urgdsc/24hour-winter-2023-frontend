@@ -46,7 +46,7 @@
           <span class="h-px w-16 bg-gray-200"></span>
         </div>
 
-        <form class="mt-8 space-y-6">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
 
           <input name="remember" type="hidden" value="true">
 
