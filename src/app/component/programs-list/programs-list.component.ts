@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./programs-list.component.scss']
 })
 export class ProgramsListComponent {
+  dropDownToggle = false;
+
+  toggleDropDown() {
+    this.dropDownToggle = !this.dropDownToggle;
+  }
 
 }

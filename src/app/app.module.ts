@@ -14,7 +14,7 @@ import { ProgramsListComponent } from './component/programs-list/programs-list.c
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    ProgramsListComponent
+    ProgramsListComponent,
   ],
   imports: [
     BrowserModule,

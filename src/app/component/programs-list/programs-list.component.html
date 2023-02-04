@@ -1,27 +1,59 @@
-<div class="h-screen w-screen bg-gray-300">
-  <div class="container h-screen mx-auto flex justify-center items-center p-2 md:p-0">
-    <div class="border border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
-      <div class="flex flex-col md:flex-row">
-        <div class="">
-          <select class="border p-2 rounded">
-            <option>Round-trip</option>
-            <option>Missouri</option>
-            <option>texas</option>
-          </select>
+<div class="h-screen w-screen bg-gray-gainsboro/10">
+  <div class="container mx-auto flex justify-center p-2 m-4">
+    <div class="border mt-2 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+      <form>
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Programs, Universities, ..." required>
+          <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
-        <div class="pt-6 md:pt-0 md:pl-6">
-          <select class="border p-2 rounded">
-            <option>4 Passangers</option>
-            <option>3 Passangers</option>
-            <option>2 Passangers</option>
-          </select>
+        <div class="flex">
+            <input type="text" name="city" id="city" class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City">
+          <div class="">
+            <label for="tuition-range" class="block mb-1 mt-3 text-sm font-medium text-gray-davys-gray dark:text-white">Tuition Range</label>
+            <input id="tuition-range" type="range" value="50" class="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+          </div>
         </div>
-        <div class="pt-6 md:pt-0 md:pl-6">
-          <select class="border p-2 rounded">
-            <option>Economy</option>
-          </select>
-        </div>
-      </div>
+
+<!--        <div class="relative inline-block text-left">-->
+<!--          <div>-->
+<!--            <button type="button" (click)="toggleDropDown()" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="menu-button" aria-expanded="true" aria-haspopup="true">-->
+<!--              Options-->
+<!--              &lt;!&ndash; Heroicon name: mini/chevron-down &ndash;&gt;-->
+<!--              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--          </div>-->
+
+<!--          &lt;!&ndash;-->
+<!--            Dropdown menu, show/hide based on menu state.-->
+
+<!--            Entering: "transition ease-out duration-100"-->
+<!--              From: "transform opacity-0 scale-95"-->
+<!--              To: "transform opacity-100 scale-100"-->
+<!--            Leaving: "transition ease-in duration-75"-->
+<!--              From: "transform opacity-100 scale-100"-->
+<!--              To: "transform opacity-0 scale-95"-->
+<!--          &ndash;&gt;-->
+<!--          <div *ngIf="dropDownToggle" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">-->
+<!--            <div class="py-1" role="none">-->
+<!--              &lt;!&ndash; Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" &ndash;&gt;-->
+<!--              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>-->
+<!--              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>-->
+<!--              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>-->
+<!--              <form method="POST" action="#" role="none">-->
+<!--                <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+      </form>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
           <div class="flex border rounded bg-gray-300 items-center p-2 ">
