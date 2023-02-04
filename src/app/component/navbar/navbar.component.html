@@ -23,7 +23,8 @@
           <a routerLink="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-blue-munsell md:p-0  md:   md:">Contact</a>
         </li>
         <li>
-          <a routerLink="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-blue-munsell md:p-0  md:   md:">Login</a>
+          <a *ngIf="!isLoggedIn" routerLink="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-blue-munsell md:p-0  md:   md:">Login</a>
+          <a *ngIf="isLoggedIn" routerLink="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-blue-munsell md:p-0  md:   md:">Logout</a>
         </li>
       </ul>
     </div>
