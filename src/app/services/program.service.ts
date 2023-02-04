@@ -12,4 +12,8 @@ export class ProgramService {
     return this.http.get<Program[]>("http://api.24hour.yazdanra.com/programs?" + filters)
   }
 
+  getProgram(id: string) {
+    return this.http.get<Program>("http://api.24hour.yazdanra.com/programs/" + id)
+  }
+
 }
