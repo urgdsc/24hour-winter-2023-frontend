@@ -1,19 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
-import { AppComponent } from './app.component';
-import { RegisterComponent } from './component/register/register.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
+import {ErrorInterceptor} from "./interceptors/error.interceptor";
+import {JwtInterceptor} from "./interceptors/jwt.interceptor";
+
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+
+import {RegisterComponent} from './component/register/register.component';
+import {NavbarComponent} from './component/navbar/navbar.component';
 import {LoginComponent} from "./component/login/login.component";
-import { AppRoutingModule } from './app-routing.module';
-import { ProgramsListComponent } from './component/programs-list/programs-list.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { AboutComponent } from './component/about/about.component';
-import { ServicesComponent } from './component/services/services.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { ProgramComponent } from './component/program/program.component';
+import {ProgramsListComponent} from './component/programs-list/programs-list.component';
+import {AboutComponent} from './component/about/about.component';
+import {ServicesComponent} from './component/services/services.component';
+import {ContactComponent} from './component/contact/contact.component';
+import {ProgramComponent} from './component/program/program.component';
+
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -25,12 +38,11 @@ import { ProgramComponent } from './component/program/program.component';
     ContactComponent,
     ProgramComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

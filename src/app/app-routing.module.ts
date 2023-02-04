@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./component/login/login.component";
 import {RegisterComponent} from "./component/register/register.component";
@@ -18,10 +18,10 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-{
-  path: 'programs-list',
+  {
+    path: 'programs-list',
     component: ProgramsListComponent
-},
+  },
   {
     path: 'services',
     component: ServicesComponent
@@ -34,13 +34,12 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  ]
+]
 
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
