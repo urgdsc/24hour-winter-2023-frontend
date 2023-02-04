@@ -8,6 +8,9 @@ import {LoginComponent} from "./component/login/login.component";
 import { AppRoutingModule } from './app-routing.module';
 import { ProgramsListComponent } from './component/programs-list/programs-list.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AboutComponent } from './component/about/about.component';
+import { ServicesComponent } from './component/services/services.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     RegisterComponent,
     NavbarComponent,
     ProgramsListComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

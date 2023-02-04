@@ -4,6 +4,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./component/login/login.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {ProgramsListComponent} from "./component/programs-list/programs-list.component";
+import {ServicesComponent} from "./component/services/services.component";
+import {AboutComponent} from "./component/about/about.component";
+import {ContactComponent} from "./component/contact/contact.component";
 
 
 const routes: Routes = [
@@ -19,6 +22,18 @@ const routes: Routes = [
   path: 'programs-list',
     component: ProgramsListComponent
 },
+  {
+    path: 'services',
+    component: ServicesComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
   ]
 
 
