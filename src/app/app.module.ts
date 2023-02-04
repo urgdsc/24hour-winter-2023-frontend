@@ -17,6 +17,7 @@ import {AboutComponent} from './component/about/about.component';
 import {ServicesComponent} from './component/services/services.component';
 import {ContactComponent} from './component/contact/contact.component';
 import {ProgramComponent} from './component/program/program.component';
+import { ProgramDetailsComponent } from './component/program-details/program-details.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {ProgramComponent} from './component/program/program.component';
     ServicesComponent,
     ContactComponent,
     ProgramComponent,
+    ProgramDetailsComponent,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

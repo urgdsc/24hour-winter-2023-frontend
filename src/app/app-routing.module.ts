@@ -7,11 +7,12 @@ import {ProgramsListComponent} from "./component/programs-list/programs-list.com
 import {ServicesComponent} from "./component/services/services.component";
 import {AboutComponent} from "./component/about/about.component";
 import {ContactComponent} from "./component/contact/contact.component";
+import {ProgramDetailsComponent} from "./component/program-details/program-details.component";
 
 
 const routes: Routes = [
   {
-    path:"",
+    path: "",
     component:ProgramsListComponent
   },
   {
@@ -21,10 +22,6 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
-  },
-  {
-    path: 'programs-list',
-    component: ProgramsListComponent
   },
   {
     path: 'services',
@@ -38,6 +35,13 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
+  {
+    path: 'program-list',
+    children: [
+      {path: "", component: ProgramsListComponent},
+      {path: ":id", component: ProgramDetailsComponent}
+    ],
+  }
 ]
 
 
