@@ -39,7 +39,7 @@ export class AuthService {
 
   register(newUser: NewUser): Observable<Auth> {
     const response = this.http.post<Auth>(
-      "http://api.24hour.yazdanra.com/auth/register",
+      "https://api.24hour.yazdanra.com/auth/register",
       {
         first_name: newUser.first_name,
         last_name: newUser.last_name,
@@ -60,7 +60,7 @@ export class AuthService {
 
   login(email: string, password: string): Observable<Auth> {
     const response = this.http.post<Auth>(
-      "http://api.24hour.yazdanra.com/auth/login",
+      "https://api.24hour.yazdanra.com/auth/login",
       {email: email, password: password}
     );
 
@@ -84,7 +84,7 @@ export class AuthService {
 
     // Expire the token on the server
     this.http.post(
-      "http://api.24hour.yazdanra.com/auth/logout",
+      "https://api.24hour.yazdanra.com/auth/logout",
       {}
     ).subscribe(
       _ => {
