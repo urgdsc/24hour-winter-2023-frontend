@@ -1,7 +1,7 @@
 <div class="h-screen bg-gray-gainsboro/10">
   <div class="container mx-auto flex flex-col justify-center p-2 m-4">
     <div class="border p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg m-5">
-      <form [formGroup]="formGroup">
+      <form [formGroup]="formGroup" (submit)="onSubmit()">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -21,8 +21,10 @@
         </div>
       </form>
     </div>
-    <div>
-      <app-program></app-program>
+    <div *ngFor="let program of programs">
+
+      <app-program [program]="program"></app-program>
+
     </div>
   </div>
 </div>
