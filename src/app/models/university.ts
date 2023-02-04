@@ -13,6 +13,8 @@ export interface Program {
   description: string,
 
   university: University,
+  level: string,
+  duration: number,
 
   domestic_annual_tuition: number,
   international_annual_tuition: number
