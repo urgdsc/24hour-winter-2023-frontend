@@ -11,6 +11,10 @@ import {ContactComponent} from "./component/contact/contact.component";
 
 const routes: Routes = [
   {
+    path:"",
+    component:ProgramsListComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
