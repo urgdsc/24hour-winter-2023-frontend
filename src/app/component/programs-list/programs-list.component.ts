@@ -43,6 +43,12 @@ export class ProgramsListComponent implements OnInit {
 
   onSubmit() {
     const searchQuery = this.formGroup.get("searchQuery")?.value;
+    const location = this.formGroup.get("location")?.value;
+    const program = this.formGroup.get("program")?.value;
+    const avgTuition = this.formGroup.get("avgTuition")?.value;
+
+    // TODO: Add validation
+
     let filter = "search=" + searchQuery;
     this.getPrograms(filter);
   }
