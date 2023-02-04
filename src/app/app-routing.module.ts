@@ -13,7 +13,7 @@ import {ProgramDetailsComponent} from "./component/program-details/program-detai
 const routes: Routes = [
   {
     path: "",
-    component:ProgramsListComponent
+    component:AboutComponent
   },
   {
     path: 'login',
